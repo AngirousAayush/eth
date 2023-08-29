@@ -65,3 +65,36 @@ contract AayushToken {
 
 # Execution
 
+1. **Environment Selection**:
+   - Open the [Remix Solidity IDE](https://remix.ethereum.org/).
+   - Make sure you are on a compatible Solidity version. In Remix, you can select the compiler version from the "Solidity Compiler" tab on the left sidebar.
+
+2. **Deployment**:
+   - Copy and paste the provided code into the Remix editor.
+
+3. **Compile**:
+   - Click the "Compile" button on the Remix interface to compile the smart contract. Ensure that the code compiles without errors.
+
+4. **Deploy Contract**:
+   - Go to the "Deploy & Run Transactions" tab on the left sidebar.
+   - Select "AayushToken" from the contract dropdown (it should appear after compiling).
+   - Click the "Deploy" button next to the contract dropdown.
+   - Confirm the transaction in the MetaMask pop-up if you are using the Ethereum Mainnet or a testnet.
+
+5. **Interact with the Contract**:
+   - After deploying, the deployed contract instance will be displayed below.
+   - Expand the contract instance to see the available functions.
+
+6. **Mint Tokens**:
+   - In the contract instance section, find the "mintTokens" function.
+   - Enter the address `_address` where you want to mint tokens and the `_amount` of tokens to mint.
+   - Click the "transact" button to mint tokens to the specified address.
+
+7. **Burn Tokens**:
+   - In the contract instance section, find the "burnTokens" function.
+   - Enter the address `_address` from which you want to burn tokens and the `_amount` of tokens to burn.
+   - Click the "transact" button to burn tokens from the specified address.
+
+8. **View Token Balances**:
+   - You can view the balances of different addresses using the `balances` mapping, which is automatically generated as a public getter function.
+   - Enter an address in the "balances" section of the contract instance and click the "transact" button to view the balance.
