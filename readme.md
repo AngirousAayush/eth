@@ -1,4 +1,5 @@
 # Explanation
+
 **Smart Contract Explanation: AayushToken**
 
 This Solidity smart contract defines a simple token contract named `AayushToken`. It allows users to mint (create) and burn (destroy) tokens. Let's break down the code with bullet points and headings:
@@ -31,4 +32,36 @@ This Solidity smart contract defines a simple token contract named `AayushToken`
      - `address _address`: The address from which tokens will be burned.
      - `uint _amount`: The amount of tokens to burn.
      - It checks if the balance of `_address` is sufficient to burn `_amount` tokens, and if so, decreases the `totalSupply` and the balance of `_address`.
+      
 # Code
+
+//SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+
+
+contract AayushToken {
+
+    // public variables here
+    string public tokenName = "AayushToken";
+    string public tokenSymbol = "21BCG1065";
+    uint public totalSupply = 0;
+
+    // mapping variable here
+    mapping(address => uint) public balances;
+
+    // mint function
+    function mintTokens(address _address, uint _amount) public {
+        totalSupply += _amount;
+        balances[_address] += _amount;
+    }
+
+    // burn function
+    function burnTokens(address _address, uint _amount) public {
+        require(balances[_address] >= _amount, "Cannot burn more than balance tokens");
+        totalSupply -= _amount;
+        balances[_address] -= _amount;
+    }
+}
+
+# Execution
+
